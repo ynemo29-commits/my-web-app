@@ -7,15 +7,11 @@
 </head>
 <body class="bg-light">
 
-<nav class="navbar navbar-dark bg-primary shadow-sm">
+<nav class="navbar navbar-dark bg-primary">
     <div class="container-fluid">
-        <span class="navbar-brand fw-bold">📝 Nemo Planner</span>
-
-        {% if "user" in session %}
-            <div class="d-flex align-items-center gap-2">
-                <span class="text-white">สวัสดี, {{ session["user"] }}</span>
-                <a href="{{ url_for('logout') }}" class="btn btn-light btn-sm">Logout</a>
-            </div>
+        <span class="navbar-brand">📝 Nemo Planner</span>
+        {% if session.user %}
+            <a href="/logout" class="btn btn-light">Logout</a>
         {% endif %}
     </div>
 </nav>
